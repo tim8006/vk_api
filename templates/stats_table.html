@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VK Group Statistics</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>VK Group Statistics</h1>
+    <table>
+        <tr>
+            <th>Period</th>
+            <th>Comments</th>
+            <th>Likes</th>
+            <th>Replies</th>
+            <th>Age Category</th>
+            <th>City</th>
+        </tr>
+        {% for stat in stats %}
+        <tr>
+            <td>{{ stat.period_from }} - {{ stat.period_to }}</td>
+            <td>{{ stat.comments }}</td>
+            <td>{{ stat.likes }}</td>
+            <td>{{ stat.replies }}</td>
+            <td>{{ stat.age_category }}</td>
+            <td>{{ stat.city }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
